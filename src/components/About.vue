@@ -1,5 +1,7 @@
 <template>
-    $END$
+    <div>
+        <h2>关于内容</h2>
+    </div>
 </template>
 
 <script>

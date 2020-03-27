@@ -1,28 +1,33 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <router-link to="/home">首页</router-link>
+    <router-link to="/about">关于</router-link>
+    <router-link v-bind:to="'/user/'+userId">用户</router-link>
+    <router-link to="/todoList">todoList</router-link>
+    <router-link to="/test">测试</router-link>
+    <router-view></router-view>
+    <hr />
+    <br />
+    <v-header>/</v-header>
+    <V-home></V-home>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Home from "./components/Home";
+import Header from "./components/Header";
 
 export default {
-  name: 'App',
+  name: "App",
+  data() {
+    return { userId: "lisi" };
+  },
   components: {
-    HelloWorld
+    "v-header": Header,
+    "V-home": Home
   }
-}
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>
